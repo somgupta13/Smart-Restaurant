@@ -55,5 +55,8 @@ ResultSet rs = ps.executeQuery();
                         %>
                     </tbody>
                 </table>
+                    <form action="placeorder">
+                        <input type="submit" value="Order">
+                    </form>
     </body>
 </html>

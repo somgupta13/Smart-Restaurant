@@ -27,7 +27,7 @@
         <div class="container">
              <div class="row">
                  <h1> Smart Restaurants </h1>
-                 <a class="btn btn-default" href="menu.jsp">Click Here</a>
+                 <a class="btn btn-default" href="Customer.jsp">Click Here</a>
             </div>
         </div>
            

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Kitchen
-    Created on : Mar 31, 2019, 2:00:53 AM
+    Document   : viewbill
+    Created on : Apr 1, 2019, 9:15:00 PM
     Author     : SOM
 --%>
 
@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form action="tablebill.jsp">
+            <input type="text" name="tableno" palceholder="table No."/>
+            <input type="submit" value="Proceed to bill"/>
+        </form>
     </body>
 </html>

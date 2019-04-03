@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author SOM
  */
-public class insercart extends HttpServlet {
+public class deletecart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,31 +35,27 @@ public class insercart extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try  {
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-              Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.jdbc.Driver");
              String y=(String)request.getSession().getAttribute("tableNo");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","");
-           PreparedStatement ps=con.prepareStatement("insert into cart values(?,?,?,?)");
+           PreparedStatement ps=con.prepareStatement("delete from cart where tableno=?");
             ps.setString(1,y);
-            ps.setString(2,request.getParameter("dishname"));
-            ps.setString(3,request.getParameter("quantity"));
-            ps.setString(4,request.getParameter("price"));
-            //ps.setInt(4,Integer.parseInt(request.getParameter("time1")));
-            int n = ps.executeUpdate();
+             int n = ps.executeUpdate();
             if(n>0){
-                out.println("<a href=\"menu.jsp\">Click Here</a>");
+                out.println("<a href=\"Customer.jsp\">Click Here</a>");
                 out.println("<h3>Successful</h3>");
             }
             else{
                 out.println("<h3>UnSuccessful</h3>");
             }
-        } catch(Exception e) {
-            out.println(e);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(deletecart.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(deletecart.class.getName()).log(Level.SEVERE, null, ex);
         }
-        }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

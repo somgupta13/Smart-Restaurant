@@ -1,9 +1,3 @@
-<%-- 
-    Document   : feedbackcustomer
-    Created on : Mar 29, 2019, 4:36:44 PM
-    Author     : SOM
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

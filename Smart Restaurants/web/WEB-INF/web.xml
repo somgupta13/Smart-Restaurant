@@ -8,6 +8,26 @@
         <servlet-name>Additem</servlet-name>
         <servlet-class>Additem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Validate</servlet-name>
+        <servlet-class>Validate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>insercart</servlet-name>
+        <servlet-class>insercart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>placeorder</servlet-name>
+        <servlet-class>placeorder</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deletecart</servlet-name>
+        <servlet-class>deletecart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteorder</servlet-name>
+        <servlet-class>deleteorder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
@@ -16,9 +36,32 @@
         <servlet-name>Additem</servlet-name>
         <url-pattern>/Additem</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Validate</servlet-name>
+        <url-pattern>/Validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>insercart</servlet-name>
+        <url-pattern>/insercart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>placeorder</servlet-name>
+        <url-pattern>/placeorder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deletecart</servlet-name>
+        <url-pattern>/deletecart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteorder</servlet-name>
+        <url-pattern>/deleteorder</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>start.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

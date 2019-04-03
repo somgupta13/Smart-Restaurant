@@ -1,6 +1,6 @@
 <%-- 
-    Document   : viewcart
-    Created on : Mar 29, 2019, 4:36:18 PM
+    Document   : tablebill
+    Created on : Apr 1, 2019, 9:18:40 PM
     Author     : SOM
 --%>
 
@@ -10,19 +10,20 @@
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-    Class.forName("com.mysql.jdbc.Driver");
-    String tableno=(String)request.getSession().getAttribute("tableNo");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","");
-PreparedStatement ps = con.prepareStatement("select * from cart where tableno=?");
-ps.setString(1,tableno);
-ResultSet rs = ps.executeQuery();
-%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <%
+        int netbill=0;
+    Class.forName("com.mysql.jdbc.Driver");
+    String tableno=(String)request.getParameter("tableno");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","");
+    PreparedStatement ps = con.prepareStatement("select * from order1 where tableno=?");
+    ps.setString(1,tableno);
+    ResultSet rs = ps.executeQuery();
+    %>
     <body>
         <table border="2" width="4" cellspacing="5" cellpadding="8">
                     <thead>
@@ -40,7 +41,7 @@ ResultSet rs = ps.executeQuery();
                                String quantity=rs.getString(3);
                                int price=Integer.parseInt(rs.getString(4));
                                int totalamt=price*Integer.parseInt(quantity);
-                        
+                                netbill=netbill+totalamt;
                         %>
                        
                         <tr>
@@ -54,6 +55,6 @@ ResultSet rs = ps.executeQuery();
                         }
                         %>
                     </tbody>
-                </table>
+        </table><h1><%=netbill%></h1>
     </body>
 </html>

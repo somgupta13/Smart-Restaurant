@@ -6,12 +6,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+String table=(String)request.getSession().getAttribute("tableNo");
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <a href="fetchmenu.jsp">Show menu</a>
+        <a href="viewcart.jsp">View cart</a>
+        <a href="tablebill.jsp?tableno=<%=table%>">Total bill</a>
+        <a href="feedbackcustomer.jsp">Feedback</a>
+        
     </body>
 </html>

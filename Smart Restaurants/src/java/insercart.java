@@ -49,7 +49,7 @@ Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restau
             //ps.setInt(4,Integer.parseInt(request.getParameter("time1")));
             int n = ps.executeUpdate();
             if(n>0){
-                out.println("<a href=\"menu.jsp\">Click Here</a>");
+                out.println("<a href=\"Customer.jsp\">Click Here</a>");
                 out.println("<h3>Successful</h3>");
             }
             else{

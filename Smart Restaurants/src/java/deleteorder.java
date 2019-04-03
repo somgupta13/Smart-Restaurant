@@ -16,12 +16,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//import MyCon;
+
 /**
  *
  * @author SOM
  */
-public class Additem extends HttpServlet {
+public class deleteorder extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,33 +33,26 @@ public class Additem extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-           // out.println("Connected");
-            //Connection con=MyCon.getConnection();
-                Class.forName("com.mysql.jdbc.Driver");
+           Class.forName("com.mysql.jdbc.Driver");
+             String y=(String)request.getParameter("tableno");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","");
-           PreparedStatement ps=con.prepareStatement("insert into menu values(?,?,?)");
-            ps.setString(1,request.getParameter("DishName"));
-            ps.setString(2,request.getParameter("DishType"));
-            ps.setInt(3,Integer.parseInt(request.getParameter("price")));
-            //ps.setInt(4,Integer.parseInt(request.getParameter("time1")));
-            int n = ps.executeUpdate();
+           PreparedStatement ps=con.prepareStatement("delete from order1 where tableno=?");
+            ps.setString(1,y);
+             int n = ps.executeUpdate();
             if(n>0){
-                out.println("<a href=\"menu.jsp\">Click Here</a>");
+                out.println("<a href=\"Owner.jsp\">Click Here</a>");
                 out.println("<h3>Successful</h3>");
             }
             else{
                 out.println("<h3>UnSuccessful</h3>");
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(deleteorder.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(deleteorder.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

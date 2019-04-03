@@ -14,5 +14,8 @@
     <body>
         <h1>Owner</h1>
         <a href="menu.jsp">Add item in menu</a>
+        <a href="viewbill.jsp">Fetch bill</a>
+        <a href="billpaid.jsp">Bill status</a>
+        
     </body>
 </html>

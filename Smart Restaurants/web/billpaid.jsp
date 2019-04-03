@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Owner
-    Created on : Mar 31, 2019, 2:00:13 AM
+    Document   : billpaid
+    Created on : Apr 1, 2019, 10:42:44 PM
     Author     : SOM
 --%>
 
@@ -12,7 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Owner</h1>
-        <a href="menu.jsp">Add item in menu</a>
+        <form action="deleteorder">
+            <input tupe="text" placeholder="tableno" name="tableno"/>
+            <input type="submit" value="billpaid"/>
+        </form>
+        
     </body>
 </html>

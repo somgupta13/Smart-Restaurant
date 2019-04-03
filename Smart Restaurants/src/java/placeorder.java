@@ -6,6 +6,12 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author SOM
  */
-public class Validate extends HttpServlet {
+public class placeorder extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -27,12 +33,27 @@ public class Validate extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            request.getSession().setAttribute("tableNo",request.getParameter("a"));
-            response.sendRedirect("Homepage.jsp");
+             Class.forName("com.mysql.jdbc.Driver");
+             String y=(String)request.getSession().getAttribute("tableNo");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","");
+            PreparedStatement ps=con.prepareStatement("insert into order1(select * from cart where tableno=? )");
+            ps.setString(1,y);
+            int n = ps.executeUpdate();
+            if(n>0){
+                out.println("<a href=\"deletecart\">Click Here</a>");
+                out.println("<h3>Successful</h3>");
+            }
+            else{
+                out.println("<h3>UnSuccessful</h3>");
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(placeorder.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(placeorder.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

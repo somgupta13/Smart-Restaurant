@@ -38,8 +38,9 @@ public class Additem extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
            // out.println("Connected");
-            Connection con=MyCon.getConnection();
-            
+            //Connection con=MyCon.getConnection();
+                Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","");
            PreparedStatement ps=con.prepareStatement("insert into menu values(?,?,?)");
             ps.setString(1,request.getParameter("DishName"));
             ps.setString(2,request.getParameter("DishType"));
@@ -47,6 +48,7 @@ public class Additem extends HttpServlet {
             //ps.setInt(4,Integer.parseInt(request.getParameter("time1")));
             int n = ps.executeUpdate();
             if(n>0){
+                out.println("<a href=\"menu.jsp\">Click Here</a>");
                 out.println("<h3>Successful</h3>");
             }
             else{
@@ -55,6 +57,8 @@ public class Additem extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
+            Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
