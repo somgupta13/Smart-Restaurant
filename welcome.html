@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+		<link rel="stylesheet" type="text/css" href="D:\New folder\welcome.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<img src="D:\New folder\res2.jpg" alt="Snow" style="width:100%;">
+				
+		<div id="wrapper" style="background-size: cover;">
+			<header class="header top" id="myHeader">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<nav> 
+								<div class="dropdown" >
+  									Login <span class="glyphicon glyphicon-user"></span>
+ 										 <div class="dropdown-content">
+  											  <a href="#">Admin</a>
+  											  <a href="#">Kitchen</a>
+ 										 </div>
+								</div>
+							</nav>	
+						</div>
+					</div>
+
+					
+			    </div>
+			</header>
+			<section id="bgimg">
+				<div class="centered">
+					<div style="font-size: 45px;text-shadow: 5px 5px 10px  	#A52A2A;"><center><strong>Welcome</strong></center>  </div>
+					<div style="font-size: 29px;text-shadow: 2px 2px 10px  	#A52A2A;">
+						 <p>Want to order something!!</p>
+							<center><button class="button button1">GO</button></center>
+					</div>
+				</div>
+			</section>
+
+			
+		</div>
+		<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+	</body>
+</html>
