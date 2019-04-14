@@ -7,7 +7,8 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-z-index: 999;}
+	z-index: 999;
+}
 
 .top {
   position: absolute;
@@ -43,7 +44,7 @@ header nav{
 	float:right;
 }
 .dropbtn {
-padding: 0px 5px;
+  padding: 0px 5px;
   color: 	white;
   font-size: 18px;
   border: none;
@@ -112,3 +113,216 @@ padding: 0px 5px;
 text-shadow: 2px 2px 10px #C0C0C0 ;
 font-size: 17px;  
   }
+  .description{
+  	font-family: : Comic Sans MS, Comic Sans, cursive;
+  	font-size: 16px;
+  	color: black;
+  	text-align:  center;
+  	padding-top: 50px;
+  	background-image: D:\New folder\bgimg.jpg;
+						
+  }
+ .button2{
+ 	background-color: white;
+  color: black; 
+ 	text-shadow: 2px 2px 10px #C0C0C0 ;
+ 	box-shadow:  2px 2px 5px darkgrey ;
+ 	align-self: center;;
+ }
+ .button2:hover{
+ 	box-shadow:  2px 2px 10px darkgrey ;
+ 	
+ }
+ .showfoodtype{
+ 	padding-top: 50px;
+ 	padding-right: 50px;
+ 	padding-left: 50px;
+ }
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+#wrapper {
+    overflow: hidden;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+	z-index: 999;
+}
+
+.top {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  left: 0%;
+  color: #FFFAFA;
+  
+}
+.header {
+  padding: 7px 7px;
+  color: 	white;
+ 
+ }
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+header nav{
+	float:right;
+}
+.dropbtn {
+  padding: 0px 5px;
+  color: 	white;
+  font-size: 18px;
+  border: none;
+  margin-right: 5px;
+  background-color: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+	margin-right: 10px;
+  display: none;
+  position: absolute;
+  min-width: 200px;
+    
+}
+
+.dropdown-content a {
+  color: 	white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+   margin-right: 7px; 
+}
+
+.dropdown-content a:hover { color:white;text-shadow: 2px 2px 10px #C0C0C0; font-size: 17px;}
+
+.dropdown:hover .dropdown-content {display: block; z-index: 999;}
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFAFA;
+  font-size: 23px;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button1 {
+  background-color: #FFFAFA; 
+  color: black; 
+  border: 2px solid #8B4513;
+}
+
+.button1:hover {
+text-shadow: 2px 2px 10px #C0C0C0 ;
+font-size: 17px;  
+  }
+  .description{
+  	font-family: : Comic Sans MS, Comic Sans, cursive;
+  	font-size: 16px;
+  	color: black;
+  	text-align:  center;
+  	padding-top: 50px;
+  	background-image: D:\New folder\bgimg.jpg;
+						
+  }
+ .button2{
+ 	background-color: white;
+  color: black; 
+ 	text-shadow: 2px 2px 10px #C0C0C0 ;
+ 	box-shadow:  2px 2px 5px darkgrey ;
+ 	align-self: center;;
+ }
+ .button2:hover{
+ 	box-shadow:  2px 2px 10px darkgrey ;
+ 	
+ }
+ .showfoodtype{
+ 	padding-top: 50px;
+ 	padding-right: 50px;
+ 	padding-left: 50px;
+ }
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
