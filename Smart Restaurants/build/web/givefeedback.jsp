@@ -1,8 +1,4 @@
-<%-- 
-    Document   : menu
-    Created on : Mar 28, 2019, 3:28:56 PM
-    Author     : SOM
---%>
+ 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,50 +27,35 @@
 </style>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-		  <a class="navbar-brand" href="Owner.jsp">Smart Restaurant</a>
+		  <a class="navbar-brand" href="Customer.jsp">Smart Restaurant</a>
 		  <ul class="navbar-nav">
 		    <li class="nav-item">
-		      <a class="nav-link" href="viewbill.jsp">Fetch Bill</a>
+		      <a class="nav-link" href="fetchmenu.jsp">Menu</a>
 		    </li>
 		    <li class="nav-item">
-		      <a class="nav-link" href="billpaid.jsp">Bill Status</a>
-		    </li>
-                    <li class="nav-item">
-		      <a class="nav-link" href="viewfeedback.jsp">View Feedback</a>
+		      <a class="nav-link" href="viewcart.jsp">Cart</a>
 		    </li>
 		  </ul>
 		</nav>
 <div class="container">
-  <h2>Add Item</h2>
-  <form class="form-horizontal" action="Additem">
+  <h2>Give Feedback</h2>
+  <form class="form-horizontal" action="addfeedback">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Dish Name</label>
+      <label class="control-label col-sm-2" for="name">Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" placeholder="Dish Name" name="DishName">
+        <input type="text" class="form-control" id="name" placeholder="Name" name="name">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Dish Type</label>
+      <label class="control-label col-sm-2" for="text"></label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pwd" placeholder="Dish Type" name="DishType">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Price</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pwd" placeholder="Price" name="price">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Image Url</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pwd" placeholder="Image Url" name="Image">
+        <input type="text" class="form-control" id="text" placeholder="Share Your Views" name="text">
       </div>
     </div>
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success btn-lg">Add</button>
+        <button type="submit" class="btn btn-success btn-lg">Submit</button>
       </div>
     </div>
   </form>
@@ -82,4 +63,5 @@
 
 </body>
 </html>
+
 

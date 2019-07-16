@@ -1,15 +1,16 @@
 <%-- 
-    Document   : Customer.jsp
-    Created on : Mar 27, 2019, 10:03:04 PM
+    Document   : fetchmenu
+    Created on : Mar 29, 2019, 4:35:59 PM
     Author     : SOM
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-String table=(String)request.getSession().getAttribute("tableNo");
+    String val=(String)request.getSession().getAttribute("tableNo");
 %>
-<!DOCTYPE html>
+
+
 <html>
 <head>
 	<title>Smart Restaurant</title>
@@ -23,6 +24,7 @@ String table=(String)request.getSession().getAttribute("tableNo");
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="page.css">
+		<link rel="stylesheet" type="text/css" href="fetchmenutype.css">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,8 +36,9 @@ String table=(String)request.getSession().getAttribute("tableNo");
 
 				 
 				<div class="logo">
-						<a href="#logo" >   
-                                                        <h4><p>Smart Restaurant</p></h4>
+						<a href="Customer.jsp" >
+							<img src="">
+							<p>SMART RESTAURANT</p>
 
 						</a>
 				 		
@@ -48,7 +51,7 @@ String table=(String)request.getSession().getAttribute("tableNo");
 				 	
 				</div>
 				<div class="cart" >
-					<a href="viewcart.jsp" style="color: #90887c; ">CART <i class='fas fa-shopping-cart ' style='font-size:14px;color: #ae8648;'></i></a>
+					<a href="#cart" style="color: #90887c; ">CART <i class='fas fa-shopping-cart ' style='font-size:14px;color: #ae8648;'></i></a>
 
 				</div>
 
@@ -63,20 +66,46 @@ String table=(String)request.getSession().getAttribute("tableNo");
 				  	</a>
 				
 			</div>
-			<div class="row  " style="background-color: #000;">
-				<video autoplay muted  loop id="myVideo" style="width: 100%;height:100%; ">
- 					 <source src="restaurant_vedio.mp4" type="video/mp4">
- 						 Your browser does not support HTML5 video.
-				</video>
-				<div class="content">
-					<h1>HOT BRISKET NOW</h1>
+			<div class="bgimg ">
+					<img src="res2.jpg" alt="Snow" style="width:100%; height: 500px;">
+				<div class="content" style="color:white; text-shadow: 2px 2px 5px white;letter-spacing: .5em;">
+					<h1>MENU</h1>
 					<hr>
-					<H3>18 YEARS TO MASTER. YOURS TO SAVOR.</H3>
-					<a href="fetchmenu.jsp"><button>SHOW MENU</button></a>
 				</div>
-			</div>
-			<div class="footer" id="d3">
-				<span >&copy; 2019 Smart Restaurant</span>
+			</div>	
+			<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="fmt starters">
+								<a href="fetchfoodtype.jsp?a=Starters">STARTERS</a>
+								<div class="bg" style="transform: translate(0px, 0px) scale(1, 1); opacity: 0;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="fmt maincourse">
+								<a  href="fetchfoodtype.jsp?a=Maincourse">MAIN COURSE</a>
+								<div class="bg" style="transform: translate(0px, 0px) scale(1, 1); opacity: 0;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="fmt desserts">
+								<a href="fetchfoodtype.jsp?a=Dessert">DESSERTS</a>
+								<div class="bg" style="transform: translate(0px, 0px) scale(1, 1); opacity: 0;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			
+
+
+
+			<div class="footer">
+				<span >&copy; 2019 company name</span>
 					<ul class="right">
 						<li>
 							<a href=""><i class="fa fa-facebook-square" style="font-size:24px"></i>
@@ -103,7 +132,8 @@ String table=(String)request.getSession().getAttribute("tableNo");
 			</div>
 		</div>
 	</div>
-	<script src="welcome.js">
+	<script src="D:\frontend\welcome.js">
             </script>
 </body>
 </html>
+

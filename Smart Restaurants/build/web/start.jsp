@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -21,5 +15,7 @@ and open the template in the editor.
         <a href="Validate?a=6">6</a><br/>
         <a href="Validate?a=7">7</a><br/>
         <a href="Validate?a=8">8</a><br/>
+        <a href="Owner.jsp">Owner</a><br/>
+        <a href="Kitchen.jsp">Kitchen</a><br/>
     </body>
 </html>

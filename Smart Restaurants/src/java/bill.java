@@ -10,18 +10,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//import MyCon;
+
 /**
  *
  * @author SOM
  */
-public class Additem extends HttpServlet {
+public class bill extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,32 +36,35 @@ public class Additem extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-           // out.println("Connected");
-            //Connection con=MyCon.getConnection();
-                Class.forName("com.mysql.jdbc.Driver");
+           Class.forName("com.mysql.jdbc.Driver");
+             String y=(String)request.getParameter("tableno");
+             String x=(String)request.getParameter("total");
+             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+	
+             String z=(String)dateFormat.format(date);
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant","root","");
-           PreparedStatement ps=con.prepareStatement("insert into menu values(?,?,?)");
-            ps.setString(1,request.getParameter("DishName"));
-            ps.setString(2,request.getParameter("DishType"));
-            ps.setInt(3,Integer.parseInt(request.getParameter("price")));
-            //ps.setInt(4,Integer.parseInt(request.getParameter("time1")));
-            int n = ps.executeUpdate();
+           PreparedStatement ps=con.prepareStatement("insert into allbills values(?,?,?)");
+            ps.setString(1,y);
+            ps.setString(2,x);
+            ps.setString(3,z);
+            
+            
+             int n = ps.executeUpdate();
             if(n>0){
-                response.sendRedirect("Owner.jsp");
+                response.sendRedirect("deleteorder?tableno="+y);
+                
             }
             else{
-               response.sendRedirect("Menu.jsp");
+                response.sendRedirect("billpaid.jsp");
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Additem.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(deleteorder.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(deleteorder.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

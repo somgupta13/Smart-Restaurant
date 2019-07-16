@@ -1,14 +1,15 @@
 <%-- 
-    Document   : Customer.jsp
-    Created on : Mar 27, 2019, 10:03:04 PM
+    Document   : Owner
+    Created on : Mar 31, 2019, 2:00:13 AM
     Author     : SOM
 --%>
 
+
+  
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-String table=(String)request.getSession().getAttribute("tableNo");
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,14 +42,13 @@ String table=(String)request.getSession().getAttribute("tableNo");
 				 		
 					</div>
 				<div class="topnav nav" id="myTopnav">
-					<a href="fetchmenu.jsp" >MENU</a>
-                                        <a href="tablebill.jsp">TOTAL BILL</a>
-				 	<a href="givefeedback.jsp">FEEDBACK</a>
+					<a href="menu.jsp" >ADD ITEM</a>
+				 	<a href="viewfeedback.jsp">VIEW FEEDBACK</a>
 				 	<a href="#d3">CONTACT</a>
 				 	
 				</div>
 				<div class="cart" >
-					<a href="viewcart.jsp" style="color: #90887c; ">CART <i class='fas fa-shopping-cart ' style='font-size:14px;color: #ae8648;'></i></a>
+					<a href="allbills.jsp" style="color: #90887c; ">ALL BILLS</a>
 
 				</div>
 
@@ -72,7 +72,8 @@ String table=(String)request.getSession().getAttribute("tableNo");
 					<h1>HOT BRISKET NOW</h1>
 					<hr>
 					<H3>18 YEARS TO MASTER. YOURS TO SAVOR.</H3>
-					<a href="fetchmenu.jsp"><button>SHOW MENU</button></a>
+					<a href="viewbill.jsp"><button>VIEW BILL</button></a>
+                                        <a href="billpaid.jsp"><button>BILL STATUS</button></a>
 				</div>
 			</div>
 			<div class="footer" id="d3">
