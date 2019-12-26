@@ -35,6 +35,7 @@ public class deleteorder extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         try (PrintWriter out = response.getWriter()) {
            Class.forName("com.mysql.jdbc.Driver");
              String y=(String)request.getParameter("tableno");
@@ -43,10 +44,13 @@ Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restau
             ps.setString(1,y);
              int n = ps.executeUpdate();
             if(n>0){
-                response.sendRedirect("Owner.jsp");
+                if((String)request.getSession().getAttribute("tableNo")!=null)
+                response.sendRedirect("leftover.jsp");
                 
-            }
             else{
+            response.sendRedirect("Owner.jsp");
+        }}
+        else{
                 response.sendRedirect("billpaid.jsp");
             }
         } catch (ClassNotFoundException ex) {

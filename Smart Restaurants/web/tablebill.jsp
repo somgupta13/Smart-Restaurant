@@ -60,7 +60,7 @@
     %>
 	<body>	
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-		  <a class="navbar-brand" href="Customer.jsp">Smart Restaurant</a>
+		  <a class="navbar-brand" href="Customer.jsp">BitesToBits</a>
 		  <ul class="navbar-nav">
 		    <li class="nav-item">
 		      <a class="nav-link" href="fetchmenu.jsp">Menu</a>
@@ -121,7 +121,8 @@
 					  
 
 				</div>
-					<h3 style="margin-left: 30%;"> TOTAL AMOUNT VALUE=<%=netbill%></h3>	
+					<h3 style="margin-left: 30%;"> TOTAL AMOUNT VALUE=<%=netbill%></h3>
+                                        <a href="TxnTest.jsp?amt=<%=netbill%>"><button class="btn btn-success btn-lg">Pay Online</button></a>
 				</div>
                                 <footer>
 			<div class="container-fluid">

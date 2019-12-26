@@ -26,7 +26,9 @@ ResultSet qs=rs;
 		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
-		
+                    .close{
+                        color:white;
+                    }
 			#a1{				
 				background-repeat: no-repeat;
 				background-image: url("https://cdn.pixabay.com/photo/2015/11/08/12/24/bokeh-1033539__340.jpg"); 
@@ -60,7 +62,7 @@ ResultSet qs=rs;
 	</head>
 	<body>	
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-		  <a class="navbar-brand" href="Customer.jsp">Smart Restaurant</a>
+		  <a class="navbar-brand" href="Customer.jsp">BitesToBits</a>
 		  <ul class="navbar-nav">
 		    <li class="nav-item">
 		      <a class="nav-link" href="fetchmenu.jsp">Menu</a>
@@ -91,7 +93,7 @@ ResultSet qs=rs;
 					        <th>Quantity</th>
 					        <th>Price</th>
 					        <th>Total Amount</th>
-					      
+                                                <th></th>
 					      </tr>
 					    </thead>
 					    <tbody>
@@ -111,6 +113,9 @@ ResultSet qs=rs;
                             <td><b><%=quantity%></b></td>
                             <td><b><%=price%></b></td>
                             <td><b><%=totalamt%></b></td>
+                            <td><a href="editcart?dishname=<%=DishName%>"><button type="button" class="close" aria-label="Close" >
+  <span aria-hidden="true">&times;</span>
+</button></a></td>
                             
                         </tr>
                         <%    
